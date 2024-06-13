@@ -75,12 +75,13 @@
             // 
             // enterButton
             // 
+            this.enterButton.BackColor = System.Drawing.SystemColors.Window;
             this.enterButton.Location = new System.Drawing.Point(123, 137);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(75, 23);
             this.enterButton.TabIndex = 4;
             this.enterButton.Text = "Войти";
-            this.enterButton.UseVisualStyleBackColor = true;
+            this.enterButton.UseVisualStyleBackColor = false;
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
             // passwordCheckBox
@@ -95,17 +96,19 @@
             // 
             // registrationButton
             // 
+            this.registrationButton.BackColor = System.Drawing.SystemColors.Window;
             this.registrationButton.Location = new System.Drawing.Point(79, 166);
             this.registrationButton.Name = "registrationButton";
             this.registrationButton.Size = new System.Drawing.Size(162, 23);
             this.registrationButton.TabIndex = 6;
             this.registrationButton.Text = "Зарегистрироваться";
-            this.registrationButton.UseVisualStyleBackColor = true;
+            this.registrationButton.UseVisualStyleBackColor = false;
             // 
             // AuthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(320, 201);
             this.Controls.Add(this.registrationButton);
             this.Controls.Add(this.passwordCheckBox);
