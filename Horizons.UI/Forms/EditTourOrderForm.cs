@@ -7,17 +7,17 @@ using System.Windows.Forms;
 
 namespace Horizons.UI.Forms
 {
-    public partial class EditTourOrder : Form
+    public partial class EditTourOrderForm : Form
     {
         public TourOrder TourOrder { get; set; }
-        public EditTourOrder()
+        public EditTourOrderForm()
         {
             InitializeComponent();
             FillControls();
             TourOrder = new TourOrder();
         }
 
-        public EditTourOrder(TourOrder tourOrder)
+        public EditTourOrderForm(TourOrder tourOrder)
         {
             InitializeComponent();
             this.TourOrder = tourOrder;

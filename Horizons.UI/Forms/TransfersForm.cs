@@ -1,19 +1,24 @@
 ﻿using Horizons.Context;
-using Horizons.Context.Models;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+
 
 namespace Horizons.UI.Forms
 {
-    public partial class MainForm : Form
+    public partial class TransfersForm : Form
     {
-        public MainForm()
+        public TransfersForm()
         {
             InitializeComponent();
-            dataGridViewTourOrders.AutoGenerateColumns = false;
+            dataGridViewTransferType.AutoGenerateColumns = false;
             FillTourOrders();
         }
 
@@ -21,7 +26,7 @@ namespace Horizons.UI.Forms
         {
             using (var db = new HorizonsDbContext())
             {
-                dataGridViewTourOrders.DataSource = db.TourOrders
+                dataGridViewTransferType.DataSource = db.TourOrders
                     .Include(x => x.Client)
                     .Include(x => x.Manager)
                     .Include(x => x.Excursions)
@@ -71,7 +76,7 @@ namespace Horizons.UI.Forms
         {
             using (var db = new HorizonsDbContext())
             {
-                int.TryParse(dataGridViewTourOrders.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
+                int.TryParse(dataGridViewTransferType.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
                 var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
 
                 var addTourOrder = new EditTourOrderForm(tourOrder);
@@ -94,14 +99,14 @@ namespace Horizons.UI.Forms
 
         private void dataGridViewTourOrders_SelectionChanged(object sender, EventArgs e)
         {
-            EditStripButton.Enabled = DeleteStripButton.Enabled = dataGridViewTourOrders.SelectedRows.Count == 1;
+            EditStripButton.Enabled = DeleteStripButton.Enabled = dataGridViewTransferType.SelectedRows.Count == 1;
         }
 
         private void DeleteStripButton_Click(object sender, EventArgs e)
         {
             using (var db = new HorizonsDbContext())
             {
-                int.TryParse(dataGridViewTourOrders.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
+                int.TryParse(dataGridViewTransferType.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
                 var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
 
                 if (MessageBox.Show($"Вы хотите удалить тур {tourOrder.StartDate.ToShortDateString()}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -115,22 +120,6 @@ namespace Horizons.UI.Forms
             }
         }
 
-        private void roomsTypeButton_Click(object sender, EventArgs e)
-        {
-            RoomTypesForm rtf = new RoomTypesForm();
-            rtf.ShowDialog();
-        }
-
-        private void excursionsButton_Click(object sender, EventArgs e)
-        {
-            ExcursionsForm ef = new ExcursionsForm();
-            ef.ShowDialog();
-        }
-
-        private void typeTransfersbutton_Click(object sender, EventArgs e)
-        {
-            TransfersForm tf = new TransfersForm();
-            tf.ShowDialog();
-        }
     }
 }
+

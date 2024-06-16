@@ -1,6 +1,6 @@
 ﻿namespace Horizons.UI.Forms
 {
-    partial class EditTourOrder
+    partial class EditTourOrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -202,7 +202,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(72, 315);
+            this.label7.Location = new System.Drawing.Point(72, 318);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 13);
             this.label7.TabIndex = 19;
@@ -216,7 +216,7 @@
             this.totalCostTextBox.Size = new System.Drawing.Size(200, 20);
             this.totalCostTextBox.TabIndex = 20;
             // 
-            // EditTourOrder
+            // EditTourOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,7 +240,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "EditTourOrder";
+            this.Name = "EditTourOrderForm";
             this.Text = "Добавление тура";
             ((System.ComponentModel.ISupportInitialize)(this.personNumericUpDown)).EndInit();
             this.ResumeLayout(false);

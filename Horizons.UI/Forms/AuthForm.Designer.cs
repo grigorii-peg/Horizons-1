@@ -72,6 +72,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(202, 26);
             this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // enterButton
             // 
@@ -93,6 +94,7 @@
             this.passwordCheckBox.TabIndex = 5;
             this.passwordCheckBox.Text = "Показать пароль";
             this.passwordCheckBox.UseVisualStyleBackColor = true;
+            this.passwordCheckBox.CheckedChanged += new System.EventHandler(this.passwordCheckBox_CheckedChanged);
             // 
             // registrationButton
             // 
@@ -103,6 +105,7 @@
             this.registrationButton.TabIndex = 6;
             this.registrationButton.Text = "Зарегистрироваться";
             this.registrationButton.UseVisualStyleBackColor = false;
+            this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
             // 
             // AuthForm
             // 
