@@ -56,8 +56,10 @@
             this.dataGridViewTransferType.Location = new System.Drawing.Point(21, 40);
             this.dataGridViewTransferType.Name = "dataGridViewTransferType";
             this.dataGridViewTransferType.RowHeadersVisible = false;
-            this.dataGridViewTransferType.Size = new System.Drawing.Size(375, 150);
+            this.dataGridViewTransferType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTransferType.Size = new System.Drawing.Size(375, 176);
             this.dataGridViewTransferType.TabIndex = 0;
+            this.dataGridViewTransferType.SelectionChanged += new System.EventHandler(this.dataGridViewTourOrders_SelectionChanged);
             // 
             // IdColumn
             // 
@@ -89,7 +91,7 @@
             this.exitStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(426, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(428, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -143,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 226);
+            this.ClientSize = new System.Drawing.Size(428, 238);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridViewTransferType);
             this.Name = "TransfersForm";

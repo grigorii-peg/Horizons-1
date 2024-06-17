@@ -55,12 +55,14 @@
             this.TitleColumn,
             this.MaxPersonCountColumn,
             this.NightCostColumn});
-            this.dataGridViewRoomTypes.Location = new System.Drawing.Point(31, 71);
+            this.dataGridViewRoomTypes.Location = new System.Drawing.Point(31, 40);
             this.dataGridViewRoomTypes.Name = "dataGridViewRoomTypes";
             this.dataGridViewRoomTypes.ReadOnly = true;
             this.dataGridViewRoomTypes.RowHeadersVisible = false;
-            this.dataGridViewRoomTypes.Size = new System.Drawing.Size(425, 124);
+            this.dataGridViewRoomTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRoomTypes.Size = new System.Drawing.Size(411, 151);
             this.dataGridViewRoomTypes.TabIndex = 0;
+            this.dataGridViewRoomTypes.SelectionChanged += new System.EventHandler(this.dataGridViewTourOrders_SelectionChanged);
             // 
             // IdColumn
             // 
@@ -114,6 +116,7 @@
             this.AddStripButton.Name = "AddStripButton";
             this.AddStripButton.Size = new System.Drawing.Size(81, 22);
             this.AddStripButton.Text = "Добавить";
+            this.AddStripButton.Click += new System.EventHandler(this.AddStripButton_Click);
             // 
             // EditStripButton
             // 
@@ -124,6 +127,7 @@
             this.EditStripButton.Name = "EditStripButton";
             this.EditStripButton.Size = new System.Drawing.Size(81, 22);
             this.EditStripButton.Text = "Изменить";
+            this.EditStripButton.Click += new System.EventHandler(this.EditStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -139,6 +143,7 @@
             this.DeleteStripButton.Name = "DeleteStripButton";
             this.DeleteStripButton.Size = new System.Drawing.Size(74, 22);
             this.DeleteStripButton.Text = "Удалить";
+            this.DeleteStripButton.Click += new System.EventHandler(this.DeleteStripButton_Click);
             // 
             // exitStripButton
             // 
@@ -147,6 +152,7 @@
             this.exitStripButton.Name = "exitStripButton";
             this.exitStripButton.Size = new System.Drawing.Size(48, 22);
             this.exitStripButton.Text = "Выход";
+            this.exitStripButton.Click += new System.EventHandler(this.exitStripButton_Click);
             // 
             // RoomTypesForm
             // 

@@ -26,26 +26,13 @@ namespace Horizons.UI.Forms
         {
             using (var db = new HorizonsDbContext())
             {
-                dataGridViewTransferType.DataSource = db.TourOrders
-                    .Include(x => x.Client)
-                    .Include(x => x.Manager)
-                    .Include(x => x.Excursions)
-                    .Include(x => x.RoomType)
-                    .Include(x => x.Transfer)
+                dataGridViewTransferType.DataSource = db.Transfers
                     .ToList()
                     .Select(x => new
                     {
                         Id = x.Id,
-                        Client = x.Client.Fullname,
-                        StartDate = x.StartDate,
-                        EndDate = x.EndDate,
-                        AmountOfNights = (x.EndDate - x.StartDate).Days,
-                        PersonCount = x.PersonCount,
-                        RoomType = x.RoomType.Title,
-                        Transfer = x.Transfer.Title,
-                        AmountOfExcursions = x.Excursions.Count,
-                        TotalCost = x.Transfer.Cost + x.Excursions.Sum(y => y.Cost) + x.RoomType.NightCost,
-                        Manager = x.Manager.Fullname,
+                        Title = x.Title,
+                        Cost = x.Cost,
                     })
                     .ToList();
             }
@@ -53,12 +40,12 @@ namespace Horizons.UI.Forms
 
         private void AddStripButton_Click(object sender, EventArgs e)
         {
-            var addTourOrder = new EditTourOrderForm();
-            if (addTourOrder.ShowDialog() == DialogResult.OK)
+            var addExcursion = new EditExcursionForm();
+            if (addExcursion.ShowDialog() == DialogResult.OK)
             {
                 using (var db = new HorizonsDbContext())
                 {
-                    db.TourOrders.Add(addTourOrder.TourOrder);
+                    db.Excursions.Add(addExcursion.Excursion);
 
                     db.SaveChanges();
                 }
@@ -77,19 +64,14 @@ namespace Horizons.UI.Forms
             using (var db = new HorizonsDbContext())
             {
                 int.TryParse(dataGridViewTransferType.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
-                var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
+                var excursion = db.Excursions.FirstOrDefault(x => x.Id == id);
 
-                var addTourOrder = new EditTourOrderForm(tourOrder);
-                if (addTourOrder.ShowDialog() == DialogResult.OK)
+                var addExcursion = new EditExcursionForm(excursion);
+                if (addExcursion.ShowDialog() == DialogResult.OK)
                 {
-                    tourOrder.ClientId = addTourOrder.TourOrder.ClientId;
-                    tourOrder.StartDate = addTourOrder.TourOrder.StartDate;
-                    tourOrder.EndDate = addTourOrder.TourOrder.EndDate;
-                    tourOrder.PersonCount = addTourOrder.TourOrder.PersonCount;
-                    tourOrder.RoomTypeId = addTourOrder.TourOrder.RoomTypeId;
-                    tourOrder.TransferId = addTourOrder.TourOrder.TransferId;
-                    tourOrder.ManagerId = addTourOrder.TourOrder.ManagerId;
-
+                    excursion.Id = addExcursion.Excursion.Id;
+                    excursion.Title = addExcursion.Excursion.Title;
+                    excursion.Cost = addExcursion.Excursion.Cost;
                     db.SaveChanges();
 
                     FillTourOrders();
@@ -107,11 +89,11 @@ namespace Horizons.UI.Forms
             using (var db = new HorizonsDbContext())
             {
                 int.TryParse(dataGridViewTransferType.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
-                var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
+                var transfer = db.Transfers.FirstOrDefault(x => x.Id == id);
 
-                if (MessageBox.Show($"Вы хотите удалить тур {tourOrder.StartDate.ToShortDateString()}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show($"Вы действительно хотите удалить трансфер - {transfer.Title}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    db.TourOrders.Remove(tourOrder);
+                    db.Transfers.Remove(transfer);
 
                     db.SaveChanges();
 
@@ -119,7 +101,6 @@ namespace Horizons.UI.Forms
                 };
             }
         }
-
     }
 }
 

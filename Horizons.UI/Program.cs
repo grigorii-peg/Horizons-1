@@ -33,7 +33,7 @@ namespace Horizons.UI
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TransfersForm());
+            Application.Run(new AuthForm());
         }
     }
 }
