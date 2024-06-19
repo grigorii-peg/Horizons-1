@@ -45,6 +45,7 @@ namespace Horizons.UI.Forms
                 using (var db = new HorizonsDbContext())
                 {
                     db.Excursions.Add(addExcursion.Excursion);
+                    MessageBox.Show("Запись была успешно добавлена!", "Добавление экскурсии", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
                 }
@@ -68,9 +69,10 @@ namespace Horizons.UI.Forms
                 var addExcursion = new EditExcursionForm(excursion);
                 if (addExcursion.ShowDialog() == DialogResult.OK)
                 {
-                    excursion.Id = addExcursion.Excursion.Id;
+                    //excursion.Id = addExcursion.Excursion.Id;
                     excursion.Title = addExcursion.Excursion.Title;
                     excursion.Cost = addExcursion.Excursion.Cost;
+                    MessageBox.Show("Запись была успешно изменена!", "Изменение экскурсии", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     db.SaveChanges();
 
                     FillTourOrders();
@@ -93,6 +95,7 @@ namespace Horizons.UI.Forms
                 if (MessageBox.Show($"Вы действительно хотите удалить экскурсию - {excursion.Title}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     db.Excursions.Remove(excursion);
+                    MessageBox.Show("Запись была успешно удалена!", "Удаление экскурсии", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
 

@@ -153,6 +153,7 @@
             this.ClientSize = new System.Drawing.Size(397, 210);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridViewExcursions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ExcursionsForm";
             this.Text = "Экскурсии";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExcursions)).EndInit();

@@ -40,12 +40,13 @@ namespace Horizons.UI.Forms
 
         private void AddStripButton_Click(object sender, EventArgs e)
         {
-            var addTourOrder = new EditTourOrderForm();
-            if (addTourOrder.ShowDialog() == DialogResult.OK)
+            var addRoomType = new EditRoomTypeForm();
+            if (addRoomType.ShowDialog() == DialogResult.OK)
             {
                 using (var db = new HorizonsDbContext())
                 {
-                    db.TourOrders.Add(addTourOrder.TourOrder);
+                    db.RoomTypes.Add(addRoomType.RoomType);
+                    MessageBox.Show("Запись была успешно добавлена!", "Добавление типа номера", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
                 }
@@ -64,19 +65,16 @@ namespace Horizons.UI.Forms
             using (var db = new HorizonsDbContext())
             {
                 int.TryParse(dataGridViewRoomTypes.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
-                var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
+                var roomType = db.RoomTypes.FirstOrDefault(x => x.Id == id);
 
-                var addTourOrder = new EditTourOrderForm(tourOrder);
-                if (addTourOrder.ShowDialog() == DialogResult.OK)
+                var addRoomType= new EditRoomTypeForm(roomType);
+                if (addRoomType.ShowDialog() == DialogResult.OK)
                 {
-                    tourOrder.ClientId = addTourOrder.TourOrder.ClientId;
-                    tourOrder.StartDate = addTourOrder.TourOrder.StartDate;
-                    tourOrder.EndDate = addTourOrder.TourOrder.EndDate;
-                    tourOrder.PersonCount = addTourOrder.TourOrder.PersonCount;
-                    tourOrder.RoomTypeId = addTourOrder.TourOrder.RoomTypeId;
-                    tourOrder.TransferId = addTourOrder.TourOrder.TransferId;
-                    tourOrder.ManagerId = addTourOrder.TourOrder.ManagerId;
-
+                    //roomType.Id = addRoomType.RoomType.Id;
+                    roomType.Title = addRoomType.RoomType.Title;
+                    roomType.MaxPersonCount = addRoomType.RoomType.MaxPersonCount;
+                    roomType.NightCost = addRoomType.RoomType.NightCost;
+                    MessageBox.Show("Запись была успешно изменена!", "Изменение типа номера", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     db.SaveChanges();
 
                     FillTourOrders();
@@ -94,12 +92,12 @@ namespace Horizons.UI.Forms
             using (var db = new HorizonsDbContext())
             {
                 int.TryParse(dataGridViewRoomTypes.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
-                var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
+                var roomType = db.RoomTypes.FirstOrDefault(x => x.Id == id);
 
-                if (MessageBox.Show($"Вы хотите удалить тур {tourOrder.StartDate.ToShortDateString()}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show($"Вы действительно хотите удалить тип номера -  {roomType.Title}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    db.TourOrders.Remove(tourOrder);
-
+                    db.RoomTypes.Remove(roomType);
+                    MessageBox.Show("Запись была успешно удалена!", "Удаление типа номера", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     db.SaveChanges();
 
                     FillTourOrders();

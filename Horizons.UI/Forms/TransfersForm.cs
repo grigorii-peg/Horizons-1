@@ -40,12 +40,13 @@ namespace Horizons.UI.Forms
 
         private void AddStripButton_Click(object sender, EventArgs e)
         {
-            var addExcursion = new EditExcursionForm();
-            if (addExcursion.ShowDialog() == DialogResult.OK)
+            var addTransfer = new EditTransferForm();
+            if (addTransfer.ShowDialog() == DialogResult.OK)
             {
                 using (var db = new HorizonsDbContext())
                 {
-                    db.Excursions.Add(addExcursion.Excursion);
+                    db.Transfers.Add(addTransfer.Transfer);
+                    MessageBox.Show("Запись была успешно добавлена!", "Добавление трансфера", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
                 }
@@ -64,14 +65,16 @@ namespace Horizons.UI.Forms
             using (var db = new HorizonsDbContext())
             {
                 int.TryParse(dataGridViewTransferType.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
-                var excursion = db.Excursions.FirstOrDefault(x => x.Id == id);
+                var transfer = db.Transfers.FirstOrDefault(x => x.Id == id);
 
-                var addExcursion = new EditExcursionForm(excursion);
-                if (addExcursion.ShowDialog() == DialogResult.OK)
+                var addtransfer = new EditTransferForm(transfer);
+                if (addtransfer.ShowDialog() == DialogResult.OK)
                 {
-                    excursion.Id = addExcursion.Excursion.Id;
-                    excursion.Title = addExcursion.Excursion.Title;
-                    excursion.Cost = addExcursion.Excursion.Cost;
+                    transfer.Id = addtransfer.Transfer.Id;
+                    transfer.Title = addtransfer.Transfer.Title;
+                    transfer.Cost = addtransfer.Transfer.Cost;
+                    MessageBox.Show("Запись была успешно изменена!", "Изменение трансфера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     db.SaveChanges();
 
                     FillTourOrders();
@@ -94,6 +97,7 @@ namespace Horizons.UI.Forms
                 if (MessageBox.Show($"Вы действительно хотите удалить трансфер - {transfer.Title}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     db.Transfers.Remove(transfer);
+                    MessageBox.Show("Запись была успешно удалена!", "Удаление трансфера", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
 

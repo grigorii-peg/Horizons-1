@@ -39,7 +39,7 @@ namespace Horizons.UI.Forms
                         RoomType = x.RoomType.Title,
                         Transfer = x.Transfer.Title,
                         AmountOfExcursions = x.Excursions.Count,
-                        TotalCost = x.Transfer.Cost + x.Excursions.Sum(y => y.Cost) + x.RoomType.NightCost,
+                        TotalCost = x.Transfer.Cost + x.Excursions.Sum(y => y.Cost) + x.RoomType.NightCost * (x.EndDate - x.StartDate).Days,
                         Manager = x.Manager.Fullname,
                     })
                     .ToList();
@@ -54,7 +54,7 @@ namespace Horizons.UI.Forms
                 using (var db = new HorizonsDbContext())
                 {
                     db.TourOrders.Add(addTourOrder.TourOrder);
-
+                    MessageBox.Show("Запись была успешно добавлена!", "Добавление тура", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     db.SaveChanges();
                 }
 
@@ -84,6 +84,7 @@ namespace Horizons.UI.Forms
                     tourOrder.RoomTypeId = addTourOrder.TourOrder.RoomTypeId;
                     tourOrder.TransferId = addTourOrder.TourOrder.TransferId;
                     tourOrder.ManagerId = addTourOrder.TourOrder.ManagerId;
+                    MessageBox.Show("Запись была успешно изменена!", "Изменение тура", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
 
@@ -104,9 +105,10 @@ namespace Horizons.UI.Forms
                 int.TryParse(dataGridViewTourOrders.SelectedRows[0].Cells["IdColumn"].Value.ToString(), out var id);
                 var tourOrder = db.TourOrders.FirstOrDefault(x => x.Id == id);
 
-                if (MessageBox.Show($"Вы хотите удалить тур {tourOrder.StartDate.ToShortDateString()}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show($"Вы действительно хотите удалить тур с датой заезда - {tourOrder.StartDate.ToShortDateString()}?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     db.TourOrders.Remove(tourOrder);
+                    MessageBox.Show("Запись была успешно удалена!", "Удаление тура", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     db.SaveChanges();
 

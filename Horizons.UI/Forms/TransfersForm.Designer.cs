@@ -148,6 +148,7 @@
             this.ClientSize = new System.Drawing.Size(428, 238);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridViewTransferType);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "TransfersForm";
             this.Text = "Типы трансферов";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransferType)).EndInit();

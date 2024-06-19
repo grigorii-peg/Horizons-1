@@ -72,11 +72,23 @@
     <Compile Include="Forms\EditExcursionForm.Designer.cs">
       <DependentUpon>EditExcursionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditRoomTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditRoomTypeForm.Designer.cs">
+      <DependentUpon>EditRoomTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditTourOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EditTourOrderForm.Designer.cs">
       <DependentUpon>EditTourOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditTransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditTransferForm.Designer.cs">
+      <DependentUpon>EditTransferForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExcursionsForm.cs">
       <SubType>Form</SubType>
@@ -116,8 +128,14 @@
     <EmbeddedResource Include="Forms\EditExcursionForm.resx">
       <DependentUpon>EditExcursionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditRoomTypeForm.resx">
+      <DependentUpon>EditRoomTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditTourOrderForm.resx">
       <DependentUpon>EditTourOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditTransferForm.resx">
+      <DependentUpon>EditTransferForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExcursionsForm.resx">
       <DependentUpon>ExcursionsForm.cs</DependentUpon>
@@ -169,6 +187,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tour.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nesvizh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brest1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

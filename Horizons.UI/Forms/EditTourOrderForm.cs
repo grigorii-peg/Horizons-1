@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Horizons.UI.Forms;
 
 namespace Horizons.UI.Forms
 {
@@ -44,6 +45,11 @@ namespace Horizons.UI.Forms
                 transferComboBox.DisplayMember = nameof(Transfer.Title);
                 transferComboBox.SelectedIndex = 0;
 
+                excursionComboBox.Items.Clear();
+                excursionComboBox.Items.AddRange(db.Excursions.ToArray());
+                excursionComboBox.DisplayMember = nameof(Excursion.Title);
+                excursionComboBox.SelectedIndex = 0;
+
                 if (TourOrder == null)
                 {
                     dateStartTimePicker.MinDate = DateTime.Now.AddDays(1).Date;
@@ -81,7 +87,6 @@ namespace Horizons.UI.Forms
             this.TourOrder.RoomTypeId = ((RoomType)roomTypeComboBox.SelectedItem).Id;
             this.TourOrder.TransferId = ((Transfer)transferComboBox.SelectedItem).Id;
             this.TourOrder.ManagerId = CurrentUser.User.Id;
-
             DialogResult = DialogResult.OK;
         }
 

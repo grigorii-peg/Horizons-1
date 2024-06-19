@@ -40,6 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label1.Location = new System.Drawing.Point(33, 15);
             this.label1.Name = "label1";
@@ -50,6 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label2.Location = new System.Drawing.Point(20, 76);
             this.label2.Name = "label2";
@@ -88,12 +90,13 @@
             // passwordCheckBox
             // 
             this.passwordCheckBox.AutoSize = true;
+            this.passwordCheckBox.BackColor = System.Drawing.SystemColors.Window;
             this.passwordCheckBox.Location = new System.Drawing.Point(98, 105);
             this.passwordCheckBox.Name = "passwordCheckBox";
             this.passwordCheckBox.Size = new System.Drawing.Size(114, 17);
             this.passwordCheckBox.TabIndex = 5;
             this.passwordCheckBox.Text = "Показать пароль";
-            this.passwordCheckBox.UseVisualStyleBackColor = true;
+            this.passwordCheckBox.UseVisualStyleBackColor = false;
             this.passwordCheckBox.CheckedChanged += new System.EventHandler(this.passwordCheckBox_CheckedChanged);
             // 
             // registrationButton
@@ -111,7 +114,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = global::Horizons.UI.Properties.Resources.brest;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(320, 201);
             this.Controls.Add(this.registrationButton);
             this.Controls.Add(this.passwordCheckBox);

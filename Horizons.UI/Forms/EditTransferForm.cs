@@ -1,5 +1,4 @@
-﻿using Horizons.Context;
-using Horizons.Context.Models;
+﻿using Horizons.Context.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,29 +11,29 @@ using System.Windows.Forms;
 
 namespace Horizons.UI.Forms
 {
-    public partial class EditExcursionForm : Form
+    public partial class EditTransferForm : Form
     {
-        public Excursion Excursion { get; set; }
-        
-        public EditExcursionForm()
+        public Transfer Transfer { get; set; }
+
+        public EditTransferForm()
         {
             InitializeComponent();
             //FillControls();
-            Excursion = new Excursion();
+            Transfer = new Transfer();
         }
-        public EditExcursionForm(Excursion excursion)
+        public EditTransferForm(Transfer transfer)
         {
             InitializeComponent();
-            this.Excursion = excursion;
-            Excursion = new Excursion();
-            InitTourOrder(excursion);
+            this.Transfer = transfer;
+            transfer = new Transfer();
+            InitTourOrder(transfer);
         }
 
 
-        private void InitTourOrder(Excursion excursion)
+        private void InitTourOrder(Transfer transfer)
         {
-            excursionTextBox.Text = Excursion.Title;
-            costTextBox.Text = Excursion.Cost.ToString();
+            transferNameTextBox.Text = transfer.Title;
+            costTextBox.Text = transfer.Cost.ToString();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -45,10 +44,9 @@ namespace Horizons.UI.Forms
         private void saveButton_Click(object sender, EventArgs e)
         {
             //this.Excursion.Id = ((User)clientComboBox.SelectedItem).Id;
-            this.Excursion.Title = excursionTextBox.Text;
-            this.Excursion.Cost = int.Parse(costTextBox.Text);
+            this.Transfer.Title = transferNameTextBox.Text;
+            this.Transfer.Cost = int.Parse(costTextBox.Text);
             DialogResult = DialogResult.OK;
         }
-
     }
 }

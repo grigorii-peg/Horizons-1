@@ -49,12 +49,12 @@
             this.TotalCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManagerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonsPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.excursionsButton = new System.Windows.Forms.Button();
-            this.roomsTypeButton = new System.Windows.Forms.Button();
-            this.typeTransfersbutton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.typeTransfersbutton = new System.Windows.Forms.Button();
+            this.roomsTypeButton = new System.Windows.Forms.Button();
+            this.excursionsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTourOrders)).BeginInit();
@@ -267,6 +267,8 @@
             // 
             // buttonsPanel
             // 
+            this.buttonsPanel.BackgroundImage = global::Horizons.UI.Properties.Resources.brest1;
+            this.buttonsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonsPanel.Controls.Add(this.label2);
             this.buttonsPanel.Controls.Add(this.pictureBox1);
             this.buttonsPanel.Controls.Add(this.typeTransfersbutton);
@@ -279,46 +281,16 @@
             this.buttonsPanel.Size = new System.Drawing.Size(1030, 93);
             this.buttonsPanel.TabIndex = 1;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Candara", 45F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(94, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(506, 73);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Новые горизонты";
-            // 
-            // excursionsButton
-            // 
-            this.excursionsButton.Location = new System.Drawing.Point(675, 26);
-            this.excursionsButton.Name = "excursionsButton";
-            this.excursionsButton.Size = new System.Drawing.Size(105, 38);
-            this.excursionsButton.TabIndex = 3;
-            this.excursionsButton.Text = "Экскурсии";
-            this.excursionsButton.UseVisualStyleBackColor = true;
-            this.excursionsButton.Click += new System.EventHandler(this.excursionsButton_Click);
-            // 
-            // roomsTypeButton
-            // 
-            this.roomsTypeButton.Location = new System.Drawing.Point(786, 27);
-            this.roomsTypeButton.Name = "roomsTypeButton";
-            this.roomsTypeButton.Size = new System.Drawing.Size(111, 37);
-            this.roomsTypeButton.TabIndex = 4;
-            this.roomsTypeButton.Text = "Типы номеров";
-            this.roomsTypeButton.UseVisualStyleBackColor = true;
-            this.roomsTypeButton.Click += new System.EventHandler(this.roomsTypeButton_Click);
-            // 
-            // typeTransfersbutton
-            // 
-            this.typeTransfersbutton.Location = new System.Drawing.Point(903, 26);
-            this.typeTransfersbutton.Name = "typeTransfersbutton";
-            this.typeTransfersbutton.Size = new System.Drawing.Size(118, 38);
-            this.typeTransfersbutton.TabIndex = 5;
-            this.typeTransfersbutton.Text = "Типы трансферов";
-            this.typeTransfersbutton.UseVisualStyleBackColor = true;
-            this.typeTransfersbutton.Click += new System.EventHandler(this.typeTransfersbutton_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(153, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(432, 29);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Меньше стресса, больше удовольствий";
             // 
             // pictureBox1
             // 
@@ -331,25 +303,57 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // typeTransfersbutton
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(153, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 29);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Меньше стресса, больше удовольствий";
+            this.typeTransfersbutton.Location = new System.Drawing.Point(903, 26);
+            this.typeTransfersbutton.Name = "typeTransfersbutton";
+            this.typeTransfersbutton.Size = new System.Drawing.Size(118, 38);
+            this.typeTransfersbutton.TabIndex = 5;
+            this.typeTransfersbutton.Text = "Типы трансферов";
+            this.typeTransfersbutton.UseVisualStyleBackColor = true;
+            this.typeTransfersbutton.Click += new System.EventHandler(this.typeTransfersbutton_Click);
+            // 
+            // roomsTypeButton
+            // 
+            this.roomsTypeButton.Location = new System.Drawing.Point(786, 27);
+            this.roomsTypeButton.Name = "roomsTypeButton";
+            this.roomsTypeButton.Size = new System.Drawing.Size(111, 37);
+            this.roomsTypeButton.TabIndex = 4;
+            this.roomsTypeButton.Text = "Типы номеров";
+            this.roomsTypeButton.UseVisualStyleBackColor = true;
+            this.roomsTypeButton.Click += new System.EventHandler(this.roomsTypeButton_Click);
+            // 
+            // excursionsButton
+            // 
+            this.excursionsButton.Location = new System.Drawing.Point(675, 26);
+            this.excursionsButton.Name = "excursionsButton";
+            this.excursionsButton.Size = new System.Drawing.Size(105, 38);
+            this.excursionsButton.TabIndex = 3;
+            this.excursionsButton.Text = "Экскурсии";
+            this.excursionsButton.UseVisualStyleBackColor = true;
+            this.excursionsButton.Click += new System.EventHandler(this.excursionsButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Candara", 45F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(94, -3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(506, 73);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Новые горизонты";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1036, 538);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Новые горизонты";

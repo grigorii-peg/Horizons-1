@@ -161,6 +161,7 @@
             this.ClientSize = new System.Drawing.Size(497, 235);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridViewRoomTypes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "RoomTypesForm";
             this.Text = "Типы номеров";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomTypes)).EndInit();
