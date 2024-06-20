@@ -49,6 +49,9 @@ SET IDENTITY_INSERT [dbo].[TourOrders] ON
 
 INSERT [dbo].[TourOrders] ([Id], [StartDate], [EndDate], [ClientId], [PersonCount], [RoomTypeId], [TransferId], [ManagerId]) VALUES (3, CAST(N'2024-06-11T00:00:00.000' AS DateTime), CAST(N'2024-06-12T00:00:00.000' AS DateTime), 4, 1, 1, 2, 3)
 INSERT [dbo].[TourOrders] ([Id], [StartDate], [EndDate], [ClientId], [PersonCount], [RoomTypeId], [TransferId], [ManagerId]) VALUES (4, CAST(N'2024-06-14T00:00:00.000' AS DateTime), CAST(N'2024-06-21T00:00:00.000' AS DateTime), 4, 3, 2, 9, 3)
+
+INSERT [dbo].[TourOrders] ([Id], [StartDate], [EndDate], [ClientId], [PersonCount], [RoomTypeId], [TransferId], [ManagerId], [ExcursionsId]) VALUES (17, CAST(N'2024-06-20T00:00:00.000' AS DateTime), CAST(N'2024-06-21T00:00:00.000' AS DateTime), 4, 2, 1, 2, 2, 1)
+INSERT [dbo].[TourOrders] ([Id], [StartDate], [EndDate], [ClientId], [PersonCount], [RoomTypeId], [TransferId], [ManagerId], [ExcursionsId]) VALUES (18, CAST(N'2024-06-21T00:00:00.000' AS DateTime), CAST(N'2024-06-22T00:00:00.000' AS DateTime), 4, 1, 2, 5, 2, 3)
 SET IDENTITY_INSERT [dbo].[TourOrders] OFF
 GO
 
