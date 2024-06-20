@@ -22,10 +22,10 @@ namespace Horizons.Context.Models
         public Transfer Transfer { get; set; }
         public long ManagerId { get; set; }
         public User Manager { get; set; }
-        public ICollection<Excursion> Excursions { get; set; }
+        public long ExcursionsId { get; set; }
+        public Excursion Excursions { get; set; }
         public TourOrder()
         {
-            Excursions = new HashSet<Excursion>();
         }
     }
 }

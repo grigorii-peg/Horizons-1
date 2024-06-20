@@ -38,8 +38,8 @@ namespace Horizons.UI.Forms
                         PersonCount = x.PersonCount,
                         RoomType = x.RoomType.Title,
                         Transfer = x.Transfer.Title,
-                        AmountOfExcursions = x.Excursions.Count,
-                        TotalCost = x.Transfer.Cost + x.Excursions.Sum(y => y.Cost) + x.RoomType.NightCost * (x.EndDate - x.StartDate).Days,
+                        AmountOfExcursions = x.Excursions.Title,
+                        TotalCost = (x.Transfer.Cost + x.RoomType.NightCost * (x.EndDate - x.StartDate).Days + x.Excursions.Cost) * x.PersonCount,
                         Manager = x.Manager.Fullname,
                     })
                     .ToList();

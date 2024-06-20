@@ -24,6 +24,8 @@ namespace Horizons.UI.Forms
             this.TourOrder = tourOrder;
             FillControls();
             InitTourOrder(tourOrder);
+            Text = label3.Text = "Изменение тура";
+            
         }
 
         private void FillControls()
@@ -87,12 +89,22 @@ namespace Horizons.UI.Forms
             this.TourOrder.RoomTypeId = ((RoomType)roomTypeComboBox.SelectedItem).Id;
             this.TourOrder.TransferId = ((Transfer)transferComboBox.SelectedItem).Id;
             this.TourOrder.ManagerId = CurrentUser.User.Id;
+            this.TourOrder.ExcursionsId = ((Excursion)excursionComboBox.SelectedItem).Id;
             DialogResult = DialogResult.OK;
         }
 
         private void roomTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             personNumericUpDown.Maximum = ((RoomType)roomTypeComboBox.SelectedItem).MaxPersonCount;
+        }
+
+        private void sumCalculation(object sender, EventArgs e)
+        {
+            try
+            {
+                totalCostTextBox.Text = ((((Transfer)transferComboBox.SelectedItem).Cost + ((RoomType)roomTypeComboBox.SelectedItem).NightCost * (dateEndTimePicker.Value - dateStartTimePicker.Value).Days + ((Excursion)excursionComboBox.SelectedItem).Cost)*personNumericUpDown.Value).ToString();
+            }
+            catch { }
         }
     }
 }

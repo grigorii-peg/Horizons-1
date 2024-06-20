@@ -37,6 +37,13 @@
             this.exitStripButton = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTourOrders = new System.Windows.Forms.DataGridView();
+            this.buttonsPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.typeTransfersbutton = new System.Windows.Forms.Button();
+            this.roomsTypeButton = new System.Windows.Forms.Button();
+            this.excursionsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,13 +55,6 @@
             this.ExcursionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManagerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonsPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.typeTransfersbutton = new System.Windows.Forms.Button();
-            this.roomsTypeButton = new System.Windows.Forms.Button();
-            this.excursionsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTourOrders)).BeginInit();
@@ -143,6 +143,7 @@
             // 
             this.dataGridViewTourOrders.AllowUserToAddRows = false;
             this.dataGridViewTourOrders.AllowUserToDeleteRows = false;
+            this.dataGridViewTourOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewTourOrders.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewTourOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTourOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -166,104 +167,6 @@
             this.dataGridViewTourOrders.Size = new System.Drawing.Size(1030, 408);
             this.dataGridViewTourOrders.TabIndex = 0;
             this.dataGridViewTourOrders.SelectionChanged += new System.EventHandler(this.dataGridViewTourOrders_SelectionChanged);
-            // 
-            // IdColumn
-            // 
-            this.IdColumn.DataPropertyName = "Id";
-            this.IdColumn.HeaderText = "Id";
-            this.IdColumn.Name = "IdColumn";
-            this.IdColumn.ReadOnly = true;
-            this.IdColumn.Visible = false;
-            // 
-            // ClientColumn
-            // 
-            this.ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ClientColumn.DataPropertyName = "Client";
-            this.ClientColumn.HeaderText = "Заказчик";
-            this.ClientColumn.Name = "ClientColumn";
-            this.ClientColumn.ReadOnly = true;
-            this.ClientColumn.Width = 80;
-            // 
-            // StartDateColumn
-            // 
-            this.StartDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.StartDateColumn.DataPropertyName = "StartDate";
-            this.StartDateColumn.HeaderText = "Дата заезда";
-            this.StartDateColumn.Name = "StartDateColumn";
-            this.StartDateColumn.ReadOnly = true;
-            this.StartDateColumn.Width = 89;
-            // 
-            // EndDateColumn
-            // 
-            this.EndDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.EndDateColumn.DataPropertyName = "EndDate";
-            this.EndDateColumn.HeaderText = "Дата выезда";
-            this.EndDateColumn.Name = "EndDateColumn";
-            this.EndDateColumn.ReadOnly = true;
-            this.EndDateColumn.Width = 91;
-            // 
-            // AmountOfNightsColumn
-            // 
-            this.AmountOfNightsColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AmountOfNightsColumn.DataPropertyName = "AmountOfNights";
-            this.AmountOfNightsColumn.HeaderText = "Количество ночей";
-            this.AmountOfNightsColumn.Name = "AmountOfNightsColumn";
-            this.AmountOfNightsColumn.ReadOnly = true;
-            this.AmountOfNightsColumn.Width = 113;
-            // 
-            // PersonColumn
-            // 
-            this.PersonColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PersonColumn.DataPropertyName = "PersonCount";
-            this.PersonColumn.HeaderText = "Количество проживающих";
-            this.PersonColumn.Name = "PersonColumn";
-            this.PersonColumn.ReadOnly = true;
-            this.PersonColumn.Width = 151;
-            // 
-            // RoomTypeColumn
-            // 
-            this.RoomTypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.RoomTypeColumn.DataPropertyName = "RoomType";
-            this.RoomTypeColumn.HeaderText = "Тип номера";
-            this.RoomTypeColumn.Name = "RoomTypeColumn";
-            this.RoomTypeColumn.ReadOnly = true;
-            this.RoomTypeColumn.Width = 85;
-            // 
-            // TransferColumn
-            // 
-            this.TransferColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.TransferColumn.DataPropertyName = "Transfer";
-            this.TransferColumn.HeaderText = "Трансфер";
-            this.TransferColumn.Name = "TransferColumn";
-            this.TransferColumn.ReadOnly = true;
-            this.TransferColumn.Width = 83;
-            // 
-            // ExcursionColumn
-            // 
-            this.ExcursionColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ExcursionColumn.DataPropertyName = "AmountOfExcursions";
-            this.ExcursionColumn.HeaderText = "Количество экскурсий";
-            this.ExcursionColumn.Name = "ExcursionColumn";
-            this.ExcursionColumn.ReadOnly = true;
-            this.ExcursionColumn.Width = 134;
-            // 
-            // TotalCostColumn
-            // 
-            this.TotalCostColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.TotalCostColumn.DataPropertyName = "TotalCost";
-            this.TotalCostColumn.HeaderText = "Стоимость";
-            this.TotalCostColumn.Name = "TotalCostColumn";
-            this.TotalCostColumn.ReadOnly = true;
-            this.TotalCostColumn.Width = 87;
-            // 
-            // ManagerColumn
-            // 
-            this.ManagerColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ManagerColumn.DataPropertyName = "Manager";
-            this.ManagerColumn.HeaderText = "Менеджер";
-            this.ManagerColumn.Name = "ManagerColumn";
-            this.ManagerColumn.ReadOnly = true;
-            this.ManagerColumn.Width = 85;
             // 
             // buttonsPanel
             // 
@@ -344,6 +247,104 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Новые горизонты";
             // 
+            // IdColumn
+            // 
+            this.IdColumn.DataPropertyName = "Id";
+            this.IdColumn.HeaderText = "Id";
+            this.IdColumn.Name = "IdColumn";
+            this.IdColumn.ReadOnly = true;
+            this.IdColumn.Visible = false;
+            // 
+            // ClientColumn
+            // 
+            this.ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ClientColumn.DataPropertyName = "Client";
+            this.ClientColumn.HeaderText = "Заказчик";
+            this.ClientColumn.Name = "ClientColumn";
+            this.ClientColumn.ReadOnly = true;
+            this.ClientColumn.Width = 80;
+            // 
+            // StartDateColumn
+            // 
+            this.StartDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.StartDateColumn.DataPropertyName = "StartDate";
+            this.StartDateColumn.HeaderText = "Дата заезда";
+            this.StartDateColumn.Name = "StartDateColumn";
+            this.StartDateColumn.ReadOnly = true;
+            this.StartDateColumn.Width = 89;
+            // 
+            // EndDateColumn
+            // 
+            this.EndDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EndDateColumn.DataPropertyName = "EndDate";
+            this.EndDateColumn.HeaderText = "Дата выезда";
+            this.EndDateColumn.Name = "EndDateColumn";
+            this.EndDateColumn.ReadOnly = true;
+            this.EndDateColumn.Width = 91;
+            // 
+            // AmountOfNightsColumn
+            // 
+            this.AmountOfNightsColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AmountOfNightsColumn.DataPropertyName = "AmountOfNights";
+            this.AmountOfNightsColumn.HeaderText = "Количество ночей";
+            this.AmountOfNightsColumn.Name = "AmountOfNightsColumn";
+            this.AmountOfNightsColumn.ReadOnly = true;
+            this.AmountOfNightsColumn.Width = 113;
+            // 
+            // PersonColumn
+            // 
+            this.PersonColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PersonColumn.DataPropertyName = "PersonCount";
+            this.PersonColumn.HeaderText = "Количество проживающих";
+            this.PersonColumn.Name = "PersonColumn";
+            this.PersonColumn.ReadOnly = true;
+            this.PersonColumn.Width = 151;
+            // 
+            // RoomTypeColumn
+            // 
+            this.RoomTypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.RoomTypeColumn.DataPropertyName = "RoomType";
+            this.RoomTypeColumn.HeaderText = "Тип номера";
+            this.RoomTypeColumn.Name = "RoomTypeColumn";
+            this.RoomTypeColumn.ReadOnly = true;
+            this.RoomTypeColumn.Width = 85;
+            // 
+            // TransferColumn
+            // 
+            this.TransferColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TransferColumn.DataPropertyName = "Transfer";
+            this.TransferColumn.HeaderText = "Трансфер";
+            this.TransferColumn.Name = "TransferColumn";
+            this.TransferColumn.ReadOnly = true;
+            this.TransferColumn.Width = 83;
+            // 
+            // ExcursionColumn
+            // 
+            this.ExcursionColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ExcursionColumn.DataPropertyName = "AmountOfExcursions";
+            this.ExcursionColumn.HeaderText = "Выбранная экскурсия";
+            this.ExcursionColumn.Name = "ExcursionColumn";
+            this.ExcursionColumn.ReadOnly = true;
+            this.ExcursionColumn.Width = 133;
+            // 
+            // TotalCostColumn
+            // 
+            this.TotalCostColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TotalCostColumn.DataPropertyName = "TotalCost";
+            this.TotalCostColumn.HeaderText = "Стоимость";
+            this.TotalCostColumn.Name = "TotalCostColumn";
+            this.TotalCostColumn.ReadOnly = true;
+            this.TotalCostColumn.Width = 87;
+            // 
+            // ManagerColumn
+            // 
+            this.ManagerColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ManagerColumn.DataPropertyName = "Manager";
+            this.ManagerColumn.HeaderText = "Менеджер";
+            this.ManagerColumn.Name = "ManagerColumn";
+            this.ManagerColumn.ReadOnly = true;
+            this.ManagerColumn.Width = 85;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +380,13 @@
         private System.Windows.Forms.ToolStripButton exitStripButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewTourOrders;
+        private System.Windows.Forms.Panel buttonsPanel;
+        private System.Windows.Forms.Button typeTransfersbutton;
+        private System.Windows.Forms.Button roomsTypeButton;
+        private System.Windows.Forms.Button excursionsButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
@@ -390,12 +398,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExcursionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCostColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManagerColumn;
-        private System.Windows.Forms.Panel buttonsPanel;
-        private System.Windows.Forms.Button typeTransfersbutton;
-        private System.Windows.Forms.Button roomsTypeButton;
-        private System.Windows.Forms.Button excursionsButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
     }
 }

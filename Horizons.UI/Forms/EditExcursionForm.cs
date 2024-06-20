@@ -28,6 +28,7 @@ namespace Horizons.UI.Forms
             this.Excursion = excursion;
             Excursion = new Excursion();
             InitTourOrder(excursion);
+            Text = label3.Text = "Изменение экскурсии";
         }
 
 

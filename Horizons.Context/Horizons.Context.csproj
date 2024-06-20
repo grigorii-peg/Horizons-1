@@ -56,6 +56,14 @@
     <Compile Include="Migrations\202406101502406_Init.Designer.cs">
       <DependentUpon>202406101502406_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406191521558_SecondMigration.cs" />
+    <Compile Include="Migrations\202406191521558_SecondMigration.designer.cs">
+      <DependentUpon>202406191521558_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406191557576_SecondMigration1.cs" />
+    <Compile Include="Migrations\202406191557576_SecondMigration1.designer.cs">
+      <DependentUpon>202406191557576_SecondMigration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Excursion.cs" />
     <Compile Include="Models\Role.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202406101502406_Init.resx">
       <DependentUpon>202406101502406_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191521558_SecondMigration.resx">
+      <DependentUpon>202406191521558_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191557576_SecondMigration1.resx">
+      <DependentUpon>202406191557576_SecondMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

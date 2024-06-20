@@ -122,7 +122,7 @@
             this.dateStartTimePicker.Name = "dateStartTimePicker";
             this.dateStartTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateStartTimePicker.TabIndex = 9;
-            this.dateStartTimePicker.ValueChanged += new System.EventHandler(this.dateStartTimePicker_ValueChanged);
+            this.dateStartTimePicker.ValueChanged += new System.EventHandler(this.sumCalculation);
             // 
             // dateEndTimePicker
             // 
@@ -130,6 +130,7 @@
             this.dateEndTimePicker.Name = "dateEndTimePicker";
             this.dateEndTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateEndTimePicker.TabIndex = 10;
+            this.dateEndTimePicker.ValueChanged += new System.EventHandler(this.sumCalculation);
             // 
             // personNumericUpDown
             // 
@@ -152,6 +153,7 @@
             0,
             0,
             0});
+            this.personNumericUpDown.ValueChanged += new System.EventHandler(this.sumCalculation);
             // 
             // roomTypeComboBox
             // 
@@ -161,7 +163,7 @@
             this.roomTypeComboBox.Name = "roomTypeComboBox";
             this.roomTypeComboBox.Size = new System.Drawing.Size(200, 21);
             this.roomTypeComboBox.TabIndex = 14;
-            this.roomTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.roomTypeComboBox_SelectedIndexChanged);
+            this.roomTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.sumCalculation);
             // 
             // transferComboBox
             // 
@@ -171,6 +173,7 @@
             this.transferComboBox.Name = "transferComboBox";
             this.transferComboBox.Size = new System.Drawing.Size(200, 21);
             this.transferComboBox.TabIndex = 15;
+            this.transferComboBox.SelectedIndexChanged += new System.EventHandler(this.sumCalculation);
             // 
             // saveButton
             // 
@@ -232,6 +235,7 @@
             this.excursionComboBox.Name = "excursionComboBox";
             this.excursionComboBox.Size = new System.Drawing.Size(200, 21);
             this.excursionComboBox.TabIndex = 22;
+            this.excursionComboBox.SelectedIndexChanged += new System.EventHandler(this.sumCalculation);
             // 
             // label8
             // 

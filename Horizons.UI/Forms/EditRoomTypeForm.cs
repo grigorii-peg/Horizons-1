@@ -27,6 +27,7 @@ namespace Horizons.UI.Forms
             this.RoomType = roomType;
             roomType = new RoomType();
             InitTourOrder(roomType);
+            Text = label3.Text = "Изменение типа номера";
         }
 
 

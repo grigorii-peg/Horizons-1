@@ -27,6 +27,7 @@ namespace Horizons.UI.Forms
             this.Transfer = transfer;
             transfer = new Transfer();
             InitTourOrder(transfer);
+            Text = label3.Text = "Изменение трансфера";
         }
 
 
